@@ -14,8 +14,8 @@ Free Bootstrap 5 HTML Template
 -----------------------------------------*/
 :root {
   --white-color:                  #ffffff;
-  --primary-color:                #0c0a03;
-  --secondary-color:              #dc3545;
+  --primary-color:                #030c05;
+  --secondary-color:              #A31112;
   --section-bg-color:             #f5f5f5;
   --dark-color:                   #000000;
   --p-color:                      #717275;
@@ -273,7 +273,7 @@ strong {
 
 .navbar-nav .nav-link.active, 
 .navbar-nav .nav-link:hover,
-.projects-detail-page .navbar-nav .nav-link.active:hover {
+.projects-detail-page .navbar-nav .nav-link.active:hover,.hetext {
   color: var(--secondary-color);
 }
 
@@ -369,111 +369,83 @@ strong {
   text-align: right;
 }
 
-
 /*---------------------------------------
   HERO              
 -----------------------------------------*/
 .hero {
   position: relative;
-  height: calc(100vh - 133px);
-}
-
-.section-hero {
-  background-image: url('../images/jason-goodman-MUZFKa_mttU-unsplash.jpg');
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  position: relative;
-  height: auto;
-  padding-top: 180px;
-  padding-bottom: 180px;
-}
-
-.section-hero::before {
-  content: "";
-  background: linear-gradient(to top, var(--dark-color), transparent 90%);
-  position: absolute;
-  top: 0;
-  right: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  opacity: 0.7;
+  min-height: 100vh; /* Hauteur minimale pour occuper tout l'écran */
+  background: linear-gradient(to bottom right, rgb(236, 236, 239), rgb(99, 97, 98));
+  overflow: hidden; /* Empêche l'image de dépasser */
+  display: flex;
+  align-items: center; /* Centre verticalement */
 }
 
 .section-hero-text {
   position: relative;
+  width: 100%; /* Largeur totale par défaut */
+  padding: 0 15px; /* Padding horizontal */
+  text-align: center; /* Centre le texte sur les petits écrans */
 }
 
-.carousel {
-  padding-right: 0;
-  padding-left: 0;
+.hero-content {
+  display: flex;
+  flex-direction: column; /* Colonne sur les petits écrans */
+  align-items: center;
+  justify-content: center;
+  gap: 20px; /* Espace entre les éléments */
 }
 
-.hero-carousel,
-.carousel-inner,
-.carousel-item {
-  height: 100%;
-}
-
-.carousel-image-wrap::before {
-  content: "";
-  background: linear-gradient(to top, var(--dark-color), transparent 90%);
-  position: absolute;
-  z-index: 2;
-  top: 0;
-  right: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  opacity: 0.7;
-}
-
-.carousel-caption {
-  z-index: 9;
-  top: 32%;
-  bottom: 0;
-  left: 0;
-  text-align: left;
-  width: 50%;
-  margin-right: 12px;
-  margin-left: 12px;
-}
-
-.carousel-image-wrap {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  width: 100%;
-  height: 100%;
-  margin-left: auto;
-}
-
-.carousel-image {
-  width: 100%;
-  height: 100%;
+.hero-image {
+  width: 100%; /* Largeur totale par défaut */
+  max-width: 500px; /* Limite la largeur de l'image */
+  height: auto;
   object-fit: cover;
+  position: relative; /* Permet de positionner l'image par rapport à son conteneur */
+  bottom: 0; /* Aligne l'image en bas */
 }
 
-.carousel-control-next, 
-.carousel-control-prev {
-  top: auto;
-  bottom: 50px;
-  opacity: 1;
+.hetextseconde {
+  color: #1A2A6C;
 }
 
-.carousel-control-prev {
-  left: auto;
-  right: 70px;
+/* Responsive Styles */
+@media (min-width: 992px) {
+  .section-hero-text {
+    text-align: left; /* Alignement à gauche sur les grands écrans */
+    padding-right: 15px; /* Padding à droite */
+    margin-left: 60px; /* Marge à gauche */
+  }
+
+  .hero-content {
+    flex-direction: row; /* Rangée sur les grands écrans */
+    justify-content: space-between;
+  }
+
+  .hero-image {
+    width: 55%; /* Largeur réduite pour l'image */
+  }
 }
 
-.carousel-control-next-icon, 
-.carousel-control-prev-icon {
-  width: 70px;
-  height: 70px;
+@media (max-width: 767.98px) {
+  .hero {
+    height: 100px; /* Hauteur automatique sur mobile */
+    padding-top: 60px; /* Ajoute un padding pour éviter que le contenu ne touche les bords */
+    padding-bottom: 60px;
+  }
+
+  .section-hero-text {
+    margin-left: 0; /* Réinitialise la marge */
+    padding: 0 10px; /* Réduit le padding horizontal */
+  }
+
+  .hero-content {
+    gap: 10px; /* Réduit l'espace entre les éléments */
+  }
+
+  .hero-image {
+    max-width: 100%; /* Assure que l'image ne dépasse pas la largeur de l'écran */
+  }
 }
 
 
@@ -515,6 +487,12 @@ strong {
 -----------------------------------------*/
 .services {
   background: var(--section-bg-color);
+}
+
+.servicesImg{
+  height: 10%;
+  width: 90%;
+  justify-content: center;
 }
 
 .nav-tabs {
@@ -611,7 +589,8 @@ strong {
 .projects-image {
   border-radius: 20px;
   width: 100%;
-  height: auto;
+  height: 355px; /* Ajustez cette valeur selon vos besoins */
+  object-fit: cover;
   transition: all 0.3s;
 }
 
@@ -631,6 +610,104 @@ strong {
   padding: 7.5px 15px;
 }
 
+
+/* Section Partenaires */
+.partners {
+  background-color: #f8f9fa; /* Couleur de fond */
+  padding: 60px 0;
+}
+
+.partners h2 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  color: var(--dark-color); /* Couleur du titre */
+}
+
+.partners p {
+  font-size: 1.1rem;
+  color: #6c757d; /* Couleur du texte */
+}
+
+.partner-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff; /* Fond blanc pour les logos */
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Ombre légère */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.partner-logo img {
+  max-width: 100%;
+  height: auto;
+  filter: grayscale(100%); /* Logos en noir et blanc par défaut */
+  transition: filter 0.3s ease;
+}
+
+.partner-logo:hover {
+  transform: translateY(-5px); /* Effet de levée au survol */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Ombre plus prononcée au survol */
+}
+
+.partner-logo:hover img {
+  filter: grayscale(0%); /* Logos en couleur au survol */
+}
+
+/* Section Pourquoi nous choisir */
+.why-choose-us {
+  background-color: #f8f9fa; /* Fond clair */
+  padding: 60px 0;
+}
+
+.why-choose-us h2 {
+  font-size: 2.5rem;
+  color: var(--dark-color); /* Couleur du titre */
+  margin-bottom: 20px;
+}
+
+.why-choose-us .Textlead {
+  font-size: 1.2rem;
+  color: #6c757d; /* Couleur du texte */
+}
+
+/* Cercle avec icône */
+.icon-circle {
+  width: 100px;
+  height: 100px;
+  background-color: var(--secondary-color);/* Couleur rouge */
+  border-radius: 50%; /* Forme circulaire */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto 20px;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.icon-circle i {
+  font-size: 2rem;
+  color: #fff; /* Couleur de l'icône */
+}
+
+.icon-circle:hover {
+  transform: scale(1.1); /* Effet de zoom au survol */
+  background-color: #e60000; /* Rouge plus foncé au survol */
+}
+
+/* Texte sous l'icône */
+.why-choose-us h4 {
+  font-size: 1.5rem;
+  color: var(--dark-color); /* Couleur du titre */
+  margin-top: 20px;
+}
+
+.why-choose-us p {
+  font-size: 1rem;
+  color: #6c757d; /* Couleur du texte */
+  max-width: 250px;
+  margin: 0 auto;
+}
 
 /*---------------------------------------
   CONTACT INFO               
@@ -712,7 +789,7 @@ strong {
   SITE FOOTER              
 -----------------------------------------*/
 .site-footer {
-  background: var(--primary-color);
+  background: var(--secondary-color);
   padding-top: 40px;
   padding-bottom: 40px;
 }
