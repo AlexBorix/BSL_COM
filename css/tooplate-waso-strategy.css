@@ -372,9 +372,12 @@ strong {
 /*---------------------------------------
   HERO              
 -----------------------------------------*/
+/*---------------------------------------
+  HERO              
+-----------------------------------------*/
 .hero {
   position: relative;
-  min-height: 100vh; /* Hauteur minimale pour occuper tout l'écran */
+  min-height: 70vh; /* Hauteur minimale pour occuper tout l'écran */
   background: linear-gradient(to bottom right, rgb(236, 236, 239), rgb(99, 97, 98));
   overflow: hidden; /* Empêche l'image de dépasser */
   display: flex;
@@ -399,17 +402,25 @@ strong {
 .hero-image {
   width: 100%; /* Largeur totale par défaut */
   max-width: 500px; /* Limite la largeur de l'image */
-  height: auto;
-  object-fit: cover;
-  position: relative; /* Permet de positionner l'image par rapport à son conteneur */
-  bottom: 0; /* Aligne l'image en bas */
+  height: 70vh; /* Hauteur égale à celle de la section .hero */
+  display: flex;
+  align-items: center; /* Centre l'image verticalement */
+  justify-content: center; /* Centre l'image horizontalement */
+}
+
+.hero-image img {
+  width: 100%; /* Largeur totale */
+  height: 100%; /* Hauteur totale */
+  /*object-fit: cover;  Assure que l'image couvre toute la zone sans se déformer */
 }
 
 .hetextseconde {
   color: #1A2A6C;
 }
 
-/* Responsive Styles */
+/*---------------------------------------
+  RESPONSIVE STYLES               
+-----------------------------------------*/
 @media (min-width: 992px) {
   .section-hero-text {
     text-align: left; /* Alignement à gauche sur les grands écrans */
@@ -424,12 +435,13 @@ strong {
 
   .hero-image {
     width: 55%; /* Largeur réduite pour l'image */
+    max-width: 800px; /* Augmente la largeur maximale */
   }
 }
 
-@media (max-width: 767.98px) {
+@media (max-width: 991.98px) {
   .hero {
-    height: 100px; /* Hauteur automatique sur mobile */
+    height: 90vh; /* Hauteur automatique sur tablette et mobile */
     padding-top: 60px; /* Ajoute un padding pour éviter que le contenu ne touche les bords */
     padding-bottom: 60px;
   }
@@ -445,9 +457,20 @@ strong {
 
   .hero-image {
     max-width: 100%; /* Assure que l'image ne dépasse pas la largeur de l'écran */
+    height: 70vh; /* Réduit la hauteur de l'image sur tablette et mobile */
   }
 }
 
+@media (max-width: 575.98px) {
+  .hero {
+    min-height: 80vh; /* Ajuste la hauteur pour les très petits écrans */
+  }
+
+  .hero-image {
+    height: 60vh; /* Réduit encore la hauteur de l'image sur mobile */
+    width: 100%;
+  }
+}
 
 /*---------------------------------------
   ABOUT              
