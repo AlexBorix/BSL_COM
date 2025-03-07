@@ -634,6 +634,41 @@ strong {
 }
 
 
+/* section actualite*/
+/* Style pour le carrousel */
+#newsCarousel {
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.carousel-caption {
+  background: rgba(0, 0, 0, 0.5); /* Fond semi-transparent */
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.carousel-caption h5 {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.carousel-caption p {
+  font-size: 1rem;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: rgba(0, 0, 0, 0.5); /* Couleur des flèches */
+  border-radius: 50%;
+  padding: 10px;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  width: 5%;
+}
+
 /* Section Partenaires */
 .partners {
   background-color: #f8f9fa; /* Couleur de fond */
