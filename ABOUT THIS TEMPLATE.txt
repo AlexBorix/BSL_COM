@@ -7,3 +7,25 @@ You are NOT allowed to re-distribute our template ZIP file for any reason on you
 You can feature our templates on your blog posts that collect good templates. You can put a screenshot and a link back to our template page. That is helpful for us.
 
 THANK YOU
+
+
+.hero-image {
+  width: 100%; /* Largeur totale */
+  height: 70vh; /* Hauteur égale à celle de la section .hero */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden; /* Cache les parties de l'image qui dépassent */
+  background-color: #f0f0f0; /* Fond uni pour combler l'espace vide */
+  padding: 0 !important; /* Supprime le padding */
+  margin: 0 !important; /* Supprime la marge */
+}
+
+.hero-image img {
+  width: 100%; /* Largeur totale */
+  height: 100%; /* Hauteur totale */
+  object-fit: contain; /* Affiche l'image en entier sans la rogner */
+  border: none !important; /* Supprime la bordure */
+  outline: none !important; /* Supprime le contour */
+  box-shadow: none !important; /* Supprime l'ombre */
+}

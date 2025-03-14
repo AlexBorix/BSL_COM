@@ -372,102 +372,95 @@ strong {
 /*---------------------------------------
   HERO              
 -----------------------------------------*/
-/*---------------------------------------
-  HERO              
------------------------------------------*/
+/* Dégradé de fond pour la section hero */
 .hero {
   position: relative;
-  min-height: 70vh; /* Hauteur minimale pour occuper tout l'écran */
+  min-height: 70vh;
   background: linear-gradient(to bottom right, rgb(236, 236, 239), rgb(99, 97, 98));
-  overflow: hidden; /* Empêche l'image de dépasser */
+  overflow: hidden;
   display: flex;
-  align-items: center; /* Centre verticalement */
+  align-items: center;
 }
 
+/* Styles pour le texte */
 .section-hero-text {
   position: relative;
-  width: 100%; /* Largeur totale par défaut */
-  padding: 0 15px; /* Padding horizontal */
-  text-align: center; /* Centre le texte sur les petits écrans */
+  width: 100%;
+  padding: 0 15px;
+  text-align: center;
 }
 
-.hero-content {
+/* Marge à gauche sur les grands écrans */
+@media (min-width: 992px) {
+  .section-hero-text {
+    text-align: left;
+    padding-right: 15px;
+    margin-left: 60px; /* Marge à gauche conservée */
+  }
+}
+
+/* Couleur spécifique pour le texte */
+.hetextseconde {
+  color: #1A2A6C; /* Couleur conservée */
+}
+
+/* Styles pour le bouton */
+.custom-btn {
+  background-color: var(--secondary-color); /* Couleur du bouton */
+  border-color: #1A2A6C; /* Couleur de la bordure */
+  color: white; /* Couleur du texte */
+  padding: 10px 20px; /* Padding du bouton */
+  border-radius: 5px; /* Bord arrondi */
+  text-decoration: none; /* Supprime le soulignement */
+}
+
+.custom-btn:hover {
+  background-color: #0d1a4d; /* Couleur au survol */
+  border-color: #0d1a4d;
+}
+
+/* Styles pour l'image */
+.hero-image {
+  width: 100%;
+  max-width: 500px;
+  height: 70vh;
   display: flex;
-  flex-direction: column; /* Colonne sur les petits écrans */
   align-items: center;
   justify-content: center;
-  gap: 20px; /* Espace entre les éléments */
-}
-
-.hero-image {
-  width: 100%; /* Largeur totale par défaut */
-  max-width: 500px; /* Limite la largeur de l'image */
-  height: 70vh; /* Hauteur égale à celle de la section .hero */
-  display: flex;
-  align-items: center; /* Centre l'image verticalement */
-  justify-content: center; /* Centre l'image horizontalement */
 }
 
 .hero-image img {
-  width: 100%; /* Largeur totale */
-  height: 100%; /* Hauteur totale */
-  /*object-fit: cover;  Assure que l'image couvre toute la zone sans se déformer */
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Assure que l'image couvre toute la zone sans se déformer */
 }
 
-.hetextseconde {
-  color: #1A2A6C;
-}
-
-/*---------------------------------------
-  RESPONSIVE STYLES               
------------------------------------------*/
-@media (min-width: 992px) {
-  .section-hero-text {
-    text-align: left; /* Alignement à gauche sur les grands écrans */
-    padding-right: 15px; /* Padding à droite */
-    margin-left: 60px; /* Marge à gauche */
-  }
-
-  .hero-content {
-    flex-direction: row; /* Rangée sur les grands écrans */
-    justify-content: space-between;
-  }
-
-  .hero-image {
-    width: 55%; /* Largeur réduite pour l'image */
-    max-width: 800px; /* Augmente la largeur maximale */
-  }
-}
-
+/* Responsive design */
 @media (max-width: 991.98px) {
   .hero {
-    height: 90vh; /* Hauteur automatique sur tablette et mobile */
-    padding-top: 60px; /* Ajoute un padding pour éviter que le contenu ne touche les bords */
+    height: 90vh;
+    padding-top: 60px;
     padding-bottom: 60px;
   }
 
   .section-hero-text {
-    margin-left: 0; /* Réinitialise la marge */
-    padding: 0 10px; /* Réduit le padding horizontal */
-  }
-
-  .hero-content {
-    gap: 10px; /* Réduit l'espace entre les éléments */
+    margin-left: 0;
+    padding: 0 10px;
   }
 
   .hero-image {
-    max-width: 100%; /* Assure que l'image ne dépasse pas la largeur de l'écran */
-    height: 70vh; /* Réduit la hauteur de l'image sur tablette et mobile */
+    max-width: 100%;
+    height: 70vh;
   }
 }
 
 @media (max-width: 575.98px) {
   .hero {
-    min-height: 80vh; /* Ajuste la hauteur pour les très petits écrans */
+    min-height: 80vh;
   }
 
   .hero-image {
-    height: 60vh; /* Réduit encore la hauteur de l'image sur mobile */
+    height: 60vh;
     width: 100%;
   }
 }
